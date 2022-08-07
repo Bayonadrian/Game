@@ -1,0 +1,1 @@
+Gru is in his garden thinking about another evil plan; there also are the minions playing altogether there are Kevin, Stuart, and Bob; Kevin is trying to eat a banana, then he peeled the banana, and he has to decide if he wants to keep the peel or throw it in the garden.

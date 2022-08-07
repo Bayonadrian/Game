@@ -1,0 +1,1 @@
+Gru is injured, and the minions want to help him to feel better... Could you help them to make a decision?
