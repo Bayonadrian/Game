@@ -2,11 +2,17 @@ import Sequence.steps as steps
 import Sequence.basics as basics
 import Sequence.views as views
 import Sequence.decisions as decisions
+import Sequence.sequence as sequence
+import Sequence.funtions as functions
 import time
 
 while True:
 
+    inventory= False
+
     health= 8
+
+    branch_get= False
 
     print(steps.title_txt)
 
@@ -44,7 +50,7 @@ while True:
 
     time.sleep(1)
 
-    print(views.f_view_txt, '\n')
+    print(sequence.f_sequence_txt, '\n')
 
     time.sleep(3)
 
@@ -58,62 +64,103 @@ while True:
 
     time.sleep(1)
 
-    print(views.s_view_txt, '\n')
+    print('Gru is injured, and the minions want to help him to feel better...')
 
-    time.sleep(3)
+    time.sleep(1)
 
-    s_desc= decisions.s_decision()
+    print('I recommend to describe the characters...', '\n')
 
-    time.sleep(2)
+    time.sleep(1)
 
-    health -= s_desc
+    characters= input('Write "characters" to know your characters >>> ').lower()
 
-    if health <= 0:
+    if characters == 'characters':
 
-        print('Game over, Gru died')
+        print('\n')
+
+        basics.characters()
         
-        go= input('Press 1 to restart, otherwise the game is gonna finish >>> ')
+        print('\n')
+ 
+    time.sleep(1)
 
-        if go == '1':
+    while True:
 
-            continue
+        commands = input('Give me the next command(garden) >>> ')
 
-        else:
+        if commands == 'help':
+
+            print(steps.instructions_txt)
+
+            time.sleep(1)
+
+        elif 'get' in commands:
+
+            branch= input('Do you want to get a branch >>>> ')
+
+            if 'no' in branch:
+
+                print('You did not get anything', '\n')
+
+            else:
+
+                branch_get= True
+
+                print('You got a branch which is totally useless', '\n')
+
+        elif commands == 'characters':
+
+            basics.characters()
+            print('\n')
+
+            time.sleep(1)
+
+        elif commands == 'health':
+
+            print(f'Gru has {health} hp', '\n')
+
+            time.sleep(1)
+
+        elif commands == 'garden':
+
+            print('You are in the garden right now!!', '\n')
+
+            time.sleep(1)
+
+        elif commands == 'house':
+
+            desc, inventory = views.house(instruction= steps.instructions_txt, health= health)
+
+            health = desc
+
+        elif commands == 'inventory':
+
+            if inventory == False:
+
+                print('You have to take the bag to see the objects within...', '\n')
+
+            else:
+
+                health= basics.items(health= health, branch= branch_get)
+
+                print(f'Gru has {health} hp', '\n')
+
+        elif commands == 'describe':
+
+            print(views.garden(), '\n')
+
+            time.sleep(1)
+
+        elif commands == 'exit':
 
             quit()
 
-    print(f'Gru has {health} of hp. Be careful!', '\n')
+        else:
 
-    time.sleep(2)
+            print('I cannot recognize the command', '\n')
 
-    print(views.t_view_txt)
+            health -= 1
 
-    time.sleep(4)
+            functions.game_over(health=health)
 
-    t_desc= decisions.t_decision()
-
-    health -= t_desc
-
-    print(f'Gru has {health} of hp', '\n')
-
-    if t_desc > 0:
-
-        print('Gru avoided jail and stole the moon successfully.', '\n')
-
-        print('Game over', '\n')
-
-    else:
-
-        print('Gru survived but stayed in the jail for a while.')
-
-        print('Game over', '\n')
-
-    stop_game= input('Do you want to play again?(press 1) >>> ')
-
-    if stop_game == '1':
-
-        continue
-
-    else:
-
-        quit()
+            time.sleep(1)

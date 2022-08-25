@@ -1,0 +1,1 @@
+Stuart, Kevin, and Bob are watching Gru injured on the ground; they are very scared, thinking about what they will do to save Gru's life there is only a pile of branches.

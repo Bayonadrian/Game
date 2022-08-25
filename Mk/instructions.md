@@ -1,3 +1,2 @@
-
 Hi, welcome to this adventure!!
-To finish the game successfully, you have to get Gru alive from beginning to end, be careful of the life status and don't forget to use the basic commands "look" to get a description of your surrounding and "inventory" to see the objects that you carry with you, "health" to see the health status and "help" to see the instructions again.
+To finish the game successfully, you have to get Gru alive from beginning to end, be careful of the life status and don't forget to use the basic commands "health" to see the health status, "describe" to see the surroundings, "garden" to go to the garden, "house" to go into the house, "exit" to quit the game, "inventory" to see the inventory, "characters" to know the characters, "get" to get something and "help" to see the instructions again. Take care because you are going to lose health per each mistake.

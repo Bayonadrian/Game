@@ -1,8 +1,8 @@
 import os.path as path
 
-istructions_path= path.realpath('Game/Mk/instructions.md')
-title_path= path.realpath('Game/Mk/title.md')
-start_path= path.realpath('Game/Mk/start.md')
+istructions_path= path.realpath('Mk/instructions.md')
+title_path= path.realpath('Mk/title.md')
+start_path= path.realpath('Mk/start.md')
 
 def title(text):
 

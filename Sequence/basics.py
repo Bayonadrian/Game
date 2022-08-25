@@ -1,86 +1,116 @@
+from time import sleep
+import Sequence.funtions as functions
+import Sequence.final as final
 import random
 
-def username():
+def characters():
 
-    username= input('Please give me your name >>> ')
+    print('Kevin has great leadership skills...')
+    print('Stuart has great memory...')
+    print('And Bob... He is a great boy...')
 
-    return username
-
-def calling():
+def calling(health, branch):
 
     try:
 
-        health= 0
-
         while True:
+
+            asking= input('Do you wanna ask someone(write Kevin, Stuart or Bob) >>> ')
+
+            if asking == 'Stuart':
+
+                print('I have an idea, call 911')
+
+            elif asking == 'Kevin':
+
+                print('Call 12345!')
+
+            elif asking == 'Bob':
+
+                print('I just don\'t know what to do')
 
             number= round(float(input('Write the number to call >>> ')))
 
             if number == 911:
 
-                return health
+                print('Well done there is an ambulance on the way... Return to the garden')
+
+                final.final(health=health, branch=branch)
 
             else:
 
                 print('Nobody answered... Try again', '\n')
-
-                print('Gru lost 1 hp', '\n')
             
-                health += 1
+                health -= 1
+
+                functions.game_over(health=health)
+
+                print(f'Be careful Gru has {health} hp', '\n')
 
     except:
 
+        health -= 1
+
         print('Please write a number', '\n')
+
+        print(f'Be careful Gru has {health} hp', '\n')
+
+        functions.game_over(health=health)
 
         calling()
 
-def cellphone():
+def cellphone(health, branch):
 
         print('Do you want to make a call?', '\n')
 
-        health= 0
-
         while True:
 
-            to_call= input('Who is gonna make the call (write Kevin, Stuart, Bob or Gru) >>> ')
+            to_call= input('Who is gonna make the call (write Kevin, Stuart, Bob) >>> ')
 
-            subjects= ['Kevin', 'Stuart', 'Bob', 'Gru']
+            subjects= ['Kevin', 'Stuart', 'Bob']
 
             machine= random.choice(subjects)
 
-            if to_call == 'Gru':
+            if to_call == 'Kevin':
 
-                return health + calling()
+                return calling(health, branch)
 
             elif to_call == machine:
 
-                return health + calling()
+                return calling(health, branch)
 
             else:
 
                 print(f'{to_call} cannot talk because he is very nervous... Try again', '\n')
 
-                print('Gru lost 1 hp', '\n')
+                health -= 1
 
-                health += 1
+                functions.game_over(health=health)
 
-def banana():
+                print(f'Be careful Gru has {health} hp', '\n')
+
+def banana(health):
+
+        health -= 1
 
         print('This is a banana and is totally useless... Try again', '\n')
+        print(f'Be careful Gru has {health} hp', '\n')
 
-        print('Gru lost 1 hp', '\n')
+        functions.game_over(health=health)
 
-        return 1
+        return health
 
         
+def fak(health):
 
-def fak():
+        health -= 1
 
         print('First aid kit, but minions doesn\'t know how to use it and they are gonna make several mistakes... Try again', '\n')
+        print(f'Be careful Gru has {health} hp', '\n')
 
-        print('Gru lost 3 hp', '\n')
+        functions.game_over(health=health)
 
-        return 3
+        return health
 
 def items_first():
 
@@ -109,34 +139,44 @@ def items_first():
 
             print('I cannot understand well... Please try again', '\n')
 
-def items():
-
-    health= 0
+def items(health, branch):
 
     while True:
 
-        print('You have three items:', 'cellphone', '-', 'banana', '-', 'first aid kit', '\n')
+        print('You are in the inventory there you just have three commands...', '\n')
+
+        sleep(1)
+
+        print('cellphone', '-', 'banana', '-', 'first aid kit', '-', 'garden', 'health', '\n')
 
         item= input('Let me know which one do you want(write the name) >>> ').lower()
 
         if item == 'cellphone':
 
-            health += cellphone()
-            return health
+            health = cellphone(health= health, branch= branch)
 
         elif item == 'banana':
 
-            health += banana()
+            health = banana(health= health)
 
         elif item == 'first aid kit':
 
-            health += fak()
+            health = fak(health= health)
+
+        elif item == 'garden':
+
+            return health
+
+        elif item == health:
+
+            print(f'Gru has {health} hp')
 
         else:
 
             print('I cannot understand well... Please try again', '\n')
-            print('Gru lost 1 hp', '\n')
 
-            health += 1
+            health -= 1
 
+            functions.game_over(health=health)
 
+            print(f'Be careful Gru has {health} hp', '\n')
