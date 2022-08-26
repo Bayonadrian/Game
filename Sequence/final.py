@@ -10,10 +10,6 @@ def final(health, branch):
 
     while True:
 
-        print('You are in the ambulance right now but there are some police officers who are trying to get Gru to the jail', '\n')
-
-        print('You have to distract the police officers until the ambulance start moving', '\n')
-
         commands = input('Give me the next command(ambulance) >>> ')
 
         if commands == 'help':
@@ -63,7 +59,7 @@ def final(health, branch):
 
                     if exit == 'exit':
 
-                        quit()
+                        sys.exit()
 
                     else:
 
@@ -72,6 +68,7 @@ def final(health, branch):
             else:
 
                 print('You have three items Banana, Cellphone, First aid kit no one seems to be useful.', '\n')
+                print('I suggest to invent a new command')
 
         elif commands == 'describe':
 
@@ -81,7 +78,11 @@ def final(health, branch):
 
         elif commands == 'exit':
 
-            quit()
+                print('Bye...')
+
+                time.sleep(3)
+
+                quit()
 
         else:
 

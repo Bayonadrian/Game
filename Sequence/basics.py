@@ -33,7 +33,17 @@ def calling(health, branch):
 
             if number == 911:
 
-                print('Well done there is an ambulance on the way... Return to the garden')
+                print('Well done there is an ambulance on the way...', '\n')
+
+                sleep(2)
+
+                print('You are in the ambulance right now but there are some police officers who are trying to get Gru to the jail', '\n')
+
+                sleep(2)
+
+                print('You have to distract the police officers until the ambulance start moving', '\n')
+
+                sleep(2)
 
                 final.final(health=health, branch=branch)
 
@@ -147,7 +157,7 @@ def items(health, branch):
 
         sleep(1)
 
-        print('cellphone', '-', 'banana', '-', 'first aid kit', '-', 'garden', 'health', '\n')
+        print('cellphone', '-', 'banana', '-', 'first aid kit', '-', 'garden', '-', 'health', '\n')
 
         item= input('Let me know which one do you want(write the name) >>> ').lower()
 
