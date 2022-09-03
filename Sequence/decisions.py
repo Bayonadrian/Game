@@ -1,8 +1,10 @@
 import Sequence.basics as basics
 import time
 
+# First decision.
 def f_decision():
 
+    # Loop for the first decision.
     while True:
  
         print('You have to take the first decision...', '\n')
@@ -10,6 +12,7 @@ def f_decision():
         time.sleep(1)
         decision= input('Press 0 to keep the peel or 1 to throw it >>> ')
 
+        # If else statement to decide the game starting.
         if decision == '0':
 
             print('You keep the peel. So, when Gru started moving, he fell into a hole and suffered several serious injuries. You lost 2 hp', '\n')
@@ -28,19 +31,7 @@ def f_decision():
 
             print('Please select a correct answer... Try again.', '\n')
 
-
+# Secon decision.
 def s_decision():
 
     return basics.items()
-
-def t_decision():
-
-    change= input('To change the hospital write "change" >>> ')
-
-    if change == 'change':
-
-        return 2
-
-    else:
-
-        pass

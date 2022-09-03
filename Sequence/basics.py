@@ -1,18 +1,22 @@
+# Importing libraries.
 from time import sleep
 import Sequence.funtions as functions
 import Sequence.final as final
 import random
 
+# Characters description.
 def characters():
 
     print('Kevin has great leadership skills...')
     print('Stuart has great memory...')
     print('And Bob... He is a great boy...')
 
+# Calling protocol.
 def calling(health, branch):
 
     try:
-
+        
+        # While loop to make the call.
         while True:
 
             asking= input('Do you wanna ask someone(write Kevin, Stuart or Bob) >>> ')
@@ -69,6 +73,7 @@ def calling(health, branch):
 
         calling()
 
+# Function to define who is gonna make the call.
 def cellphone(health, branch):
 
         print('Do you want to make a call?', '\n')
@@ -99,6 +104,7 @@ def cellphone(health, branch):
 
                 print(f'Be careful Gru has {health} hp', '\n')
 
+# Distractive function banana.
 def banana(health):
 
         health -= 1
@@ -110,7 +116,7 @@ def banana(health):
 
         return health
 
-        
+# Distractive function first aid kit.     
 def fak(health):
 
         health -= 1
@@ -122,6 +128,7 @@ def fak(health):
 
         return health
 
+# Sample items.
 def items_first():
 
     while True:
@@ -149,8 +156,10 @@ def items_first():
 
             print('I cannot understand well... Please try again', '\n')
 
+# Fourth room.
 def items(health, branch):
 
+    # Looping to decide the best item possible.
     while True:
 
         print('You are in the inventory there you just have three commands...', '\n')
